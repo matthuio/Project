@@ -1,0 +1,17 @@
+For my algorithim I chose, a mix between Z-Score and EMA.
+The  Z-Score is a statistical measure that calculates how many standard deviations an element is from the mean.
+This Z-Score will be used to determine wether a value is normal or abnormal, however this alone would not be enough to determine the trend, 
+so I used the EMA to smooth out the data and get a better view of trends and seasonal patterns. 
+The Exponential Moving Average  (EMA) is a type of moving average typically used  in technical analysis of financial markets to smooth out price action by filtering out
+the noise from random price fluctuations, the inclusion of EMA provides a way to more accuratley keep track of trends as it weighs recent data more heavily than older data.
+And provides a non-static view of the data, which is useful for identifying seasonal patterns.
+
+Together with these two methods, I implemented a rolling window which allows me to consider how a data point changes the average value of a set of datapoints.
+This also helps in identifying seasonal trends, essentially we are creating a smaller dataset in the overall dataset and slowly adding the most recent datapoints and removing 
+the older ones and then we can apply the Z-Score and EMA to this smaller dataset to see how the data point changes the average value of the set of datapoints.
+
+There were many algorithims to consider , but this hybrid approach seemed to be the most effective for this problem because it uses a 
+proven method of trackings seasonal data in EMA and uses a determisnistic method of identifying outliers in Z-Score. 
+Other algorithims such as quantile regression, or even a simple moving average could have been used, but they would not have been as effective at 
+determining trends and are more susceptible to noise in the data.
+
